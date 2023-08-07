@@ -8,6 +8,7 @@ export default function LoginPage({providers}) {
     if(status === 'loading'){
         return ''
     }
+   
     if(data){
         router.push('/')
     }
@@ -17,7 +18,7 @@ export default function LoginPage({providers}) {
       {Object.values(providers).map(provider => (
         <div key={provider.id}>
           <button onClick={async () => {await signIn(provider.id)}} className="bg-twitterWhite pl-3 pr-5 py-2 text-black rounded-full flex items-center">
-            <FaGoogle className="mr-2" />
+          <FaGoogle className="mr-2" />
             Sign in with {provider.name}
           </button>
         </div>
